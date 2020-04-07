@@ -1,0 +1,17 @@
+#!/bin/sh
+
+[ "${ACTION}" = "released" -o "${ACTION}" = "timeout" ] || exit 21
+
+. /lib/functions.sh
+
+logger "$BUTTON pressed for $SEEN seconds"
+
+# factory reset
+if [ "$SEEN" -gt 5 ]
+then
+        [ -f /tmp/.factory_reset ] && return
+        touch /tmp/.factory_reset
+        jffs2reset -y && reboot &
+fi
+
+return 0

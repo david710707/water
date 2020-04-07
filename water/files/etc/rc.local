@@ -1,0 +1,3 @@
+/SDC/gpsd/bin/gpsd -nN /dev/ttyS1
+/SDC/SdcWatchDog &
+exit 0
