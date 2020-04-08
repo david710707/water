@@ -11,3 +11,5 @@ start()
                 rm /SDC/wps
         }
 }
+
+/SDC/Water &
